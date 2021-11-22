@@ -10,10 +10,15 @@
 </head>
 <body>
     <div id="app" class="text-center">
-        <div v-if="isLoa">
-
+        <div v-if="isLoading">
+            <h1>Loading...</h1>
         </div>
-
+        <ul>
+            <li v-for="email in emails">{{email}}</li>
+        </ul>
+        <button @click="getEmails(10)" class="btn btn-info">Genera 10 E-mail</button>
+        <br><br> 
+        <button @click="getEmail" class="btn btn-info">Genera E-mail</button>
 
     </div>
 

@@ -7,11 +7,12 @@ const app = new Vue({
     },
 
     mounted(){
-        this.getEmails(10);
+        
     },
 
     methods: {
         getEmails(num){
+            this.emails = [];
             for(let i = 0; i< num; i++){
                 this.getEmail();
             }
@@ -26,6 +27,7 @@ const app = new Vue({
                 this.isLoading = false;
             })
             .catch((error) =>{
+                console.log('KO',error);
                 this.transErr = true;
             })
         }
